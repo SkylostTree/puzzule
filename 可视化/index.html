@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Puzzle Solver</title>
+    <style>
+        textarea {
+            height: 200px;
+        }
+        .puzzle-container {
+            position: relative;
+            width: 300px; /* 可根据需要调整拼图容器的宽度 */
+            height: 300px; /* 可根据需要调整拼图容器的高度 */
+        }
+        .puzzle-piece {
+            position: absolute;
+            width: 100px; /* 拼图块的宽度 */
+            height: 100px; /* 拼图块的高度 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            transition: all .3s ease;
+            box-sizing: border-box;
+            padding: 3px;
+        }
+        .puzzle-piece .inner {
+            background-color: #E7BD83;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: #8C5333;
+        }
+        #x0 {
+            z-index: -1;
+            opacity: 0;
+        }
+        .puzzle-container {
+            border: 4px solid #000;
+        }
+    </style>
+</head>
+<body>
+<div class="puzzle-container" id="puzzleContainer"></div>
+<textarea id="layoutInput" placeholder="输入当前布局"></textarea>
+<button onclick="applyLayout()">应用布局</button>
+<textarea id="stepsInput" placeholder="输入步骤"></textarea>
+<button onclick="executeSteps()">执行步骤</button>
+<button onclick="executeSteps(true)">快速步骤</button>
+
+<script src="./js/logic.js"></script>
+</body>
+</html>
